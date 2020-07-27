@@ -59,7 +59,8 @@ const main = async () => {
         const response_length = instance.exports.runtime();
         if (response_length > 0) {
             console.log("wasm returns:", response_length);
-            return;
+            document.getElementById("got").value = response_length;
+            return; // exit the async "event loop" 
         }
         await sleep_ms(1000);
     }
