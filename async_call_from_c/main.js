@@ -56,9 +56,9 @@ const main = async () => {
     memory = instance.exports.memory;
 
     while (true){
-        const ad = instance.exports.runtime();
-        if (ad > 0) {
-            console.log("wasm returns:", ad);
+        const response_length = instance.exports.runtime();
+        if (response_length > 0) {
+            console.log("wasm returns:", response_length);
             return;
         }
         await sleep_ms(1000);

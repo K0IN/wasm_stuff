@@ -9,17 +9,17 @@ its meant to teach others, not to do high level code.
 
 > Make
 
-> Clang9 or above
+> Clang 9 or above
 
-> python3 (or any other web server)
+> A Webserver [you can find a webserver here (py3)](server4.py)
 
-> npm (i try to avoid it)
+> npm
 
 ## What we got
 
- what|Description
+What|Description
 --------|-----------
-[Call async JS from C](/async_call_from_c) | 1
+[Simple call async JS from C](/async_call_from_c) | A simple example of using async functions from C
 
 ## QA
 
