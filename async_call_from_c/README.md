@@ -17,6 +17,10 @@ What|Description
 main.c | this uses async.h for this will fetch [hello.txt](hello.txt) and return its length
 main.js | this file provides object storage, initialization of the wasm, main loop to wasm
 
+## Example
+
+[example](https://k0in.github.io/wasm_stuff/async_call_from_c/index.html)
+
 ## credits
 
 credits to the awesome [async.h](https://github.com/naasking/async.h) C library by naasking
