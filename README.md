@@ -17,7 +17,9 @@ its meant to teach others, not to do high level code.
 
 ## What we got
 
-[call async js from c](/async_call_from_c) 
+ what|Description
+--------|-----------
+[Call async JS from C](/async_call_from_c) | 1
 
 ## QA
 
