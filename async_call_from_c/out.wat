@@ -13,7 +13,7 @@
               local.get $p0
               i32.load
               local.tee $l1
-              i32.const -18
+              i32.const -19
               i32.add
               local.tee $l2
               i32.const 1
@@ -24,7 +24,7 @@
               i32.eq
               br_if $B1
               local.get $p0
-              i32.const 18
+              i32.const 19
               i32.store
               br $B3
             end
@@ -46,7 +46,7 @@
           i32.eqz
           br_if $B0
           local.get $p0
-          i32.const 19
+          i32.const 20
           i32.store
         end
         local.get $p0
@@ -92,4 +92,4 @@
   (global $g0 (mut i32) (i32.const 66592))
   (export "memory" (memory 0))
   (export "runtime" (func $runtime))
-  (data $d0 (i32.const 1024) "hallo.txt\00"))
+  (data $d0 (i32.const 1024) "hello.txt\00"))

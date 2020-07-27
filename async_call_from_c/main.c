@@ -16,7 +16,7 @@ fetch_state_t pt;
 async example(fetch_state_t *pt) {
     async_begin(pt);
 	handle_t i;
-	await(pt->fetch_handle = fetch("hallo.txt"));
+	await(pt->fetch_handle = fetch("hello.txt"));
 	await(pt->response_length = do_fetch(pt->fetch_handle));
 	// you would need to clean up fetch_handle here and stuff but this is a simple example ;)
     async_end;
