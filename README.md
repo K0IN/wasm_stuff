@@ -1,11 +1,24 @@
-****************************
-WASM Collection
-****************************
+# WASM Collection
 
-# What is this?
+## What is this?
 
-this is a collection of some WebAssembly stuff I stumble across
+This is a collection of some WebAssembly experiments I did, 
+its meant to teach others, not to do high level code.
 
-=============== ========
-What            Where
-=============== ======== 
+## Requirements
+
+> Make
+
+> Clang9 or above
+
+> python3 (or any other web server)
+
+> npm (i try to avoid it)
+
+## What we got
+
+[call async js from c](/async_call_from_c) 
+
+## QA
+
+todo
