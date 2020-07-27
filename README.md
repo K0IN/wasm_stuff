@@ -1,2 +1,11 @@
-# wasm_stuff
-A collection of stuff I found experimenting with wasm / clang 
+****************************
+WASM Collection
+****************************
+
+# What is this?
+
+this is a collection of some WebAssembly stuff I stumble across
+
+=============== ========
+What            Where
+=============== ======== 

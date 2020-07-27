@@ -1,0 +1,5 @@
+# c/c++ stuff 
+*.o
+
+# visual studio stuff
+.vscode
