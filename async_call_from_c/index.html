@@ -3,6 +3,9 @@
     <header>
         <title>Call async Javascript from C</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
         <style>
             html {
                 font-family: 'Roboto Mono', monospace;
@@ -27,6 +30,26 @@
             By using a async event loop in js and calling async subroutine in C<br>
             The fetch is artificial slowed down(1 sec) to simulate a long lasting task
         </p>
+        <pre><code class="language-C" id=src>async example(fetch_state_t *state)
+{
+    async_begin(state);
+        await(state->fetch_handle = fetch("hello.txt"));
+        await(state->response_length = do_fetch(state->fetch_handle));
+    async_end;
+}</code></pre>
+        <pre><code class="language-javascript" id=src>const env = {
+    fetch: (str_ptr) => {
+        const url = stringFromPtr(mem, str_ptr);
+        const pollObject = new FetchRoutine(url);
+        const jsObjectHandle = newHandle(pollObject);
+        return jsObjectHandle;
+    },
+    do_fetch: (handle) => {
+        const value = getObjectByHandle(handle)?.getValue();
+        if (value) return value;
+        return 0;
+    }
+}</code></pre>
         <span>Expected: 20</span>
         <span>Got: <input readonly id=got></input></span>
         <ul id="console"></ul>

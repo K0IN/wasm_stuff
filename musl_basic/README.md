@@ -6,12 +6,16 @@ This is a example using musl, a `libc` to use all that sweet c std lib functions
 This just shows that you can use `sprintf`.
 
 How to compile
-1. compile musl (clang-10 example)
+1. compile musl(clang-10 example)
+
     `cd musl`
+    
     `AR=llvm-ar-10 CFLAGS="-O0 -fvisibility=default --target=wasm32" CC=clang-10 RANLIB=llvm-ranlib-10 ./configure --disable-shared --target=wasm32`
+
     `make`
 
 2. compile our library with static linked libc
+
     `make`
 
 ---
@@ -57,6 +61,7 @@ musl/ | is a fork of [musl libc](https://musl.libc.org/) with some arch fixed fo
 
 `malloc`, `free` does not work! 
 and also no threading, ipc, networking, ...
+
 **DO NOT USE THIS THIS IS JUST A EXAMPLE!**
 
 ## credits 

@@ -3,6 +3,9 @@
     <header>
         <title>Simple LibC</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
         <style>
             html {
                 font-family: 'Roboto Mono', monospace;
@@ -23,11 +26,22 @@
     <body>
         <h1>Simple LibC</h1>
         <p>
-            We compiled musl libc to wasm and statically linked it to our example to use it in the browser.
+            We compiled musl libc to wasm and statically linked it to our example to use it in the browser.<br>
             Be aware linking a libc might blow up file the file size of your project.
         </p>
+        <pre><code class="language-C" id=src>int init(int input)
+{
+    char *some_str = "The value of x is:";
+    if (input == 1)
+    {
+        some_str = "hallo welt";
+    }
+    memset(buffer, 0, bufferSize);
+    sprintf(buffer, "%s %i", some_str, input);
+    return (int)buffer;
+}</code></pre>
         <ul id="console"></ul>
-        <script type="module" src="main.js" async></script>
+        <script type="module" src="main.js" async></script>        
     </body>
     <footer>
         <a href=https://github.com/K0IN/wasm_stuff>Find me on Github</a>
