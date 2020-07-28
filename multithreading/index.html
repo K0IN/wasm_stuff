@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <header>
-        <title>Call async Javascript from C</title>
+        <title>Simple threading in C</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <style>
             html {
@@ -22,14 +22,8 @@
     </header>
 
     <body>
-        <h1>Call async Javascript from C</h1>
-        <p>
-            This Example uses the browser fetch api from C<br>
-            By using a async event loop in js and calling async subroutine in C<br>
-            The fetch is artificial slowed down(1 sec) to simulate a long lasting task
-        </p>
-        <span>Expected: 20</span>
-        <span>Got: <input readonly id=got></input></span>
+        <h1>Start a thread that does some heavy calculations</h1>
+        <p></p>
         <ul id="console"></ul>
         <script type="module" src="main.js" async></script>
     </body>

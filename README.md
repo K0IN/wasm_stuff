@@ -19,8 +19,15 @@ its meant to teach others, not to do high level code.
 
 What|Description
 --------|-----------
-[Simple call async JS from C](/async_call_from_c) | A simple example of using async functions from C
+[Simple call async JS from C](/async_call_from_c/README.md) | using async `JS` functions from `C`
+[Simple multithreading](/multithreading/README.md) | starting a `C` function from `C` in a other thread
 
 ## QA
 
 todo
+
+## Other info
+
+I used clang 10 for every experiment if you use a other version you might need to change the clang version in the Makefiles
+
+Also feel free to contribute your own findings ;)
