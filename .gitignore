@@ -1,6 +1,14 @@
 # c/c++ stuff 
 *.o
+*.a 
 
 # visual studio stuff
 .vscode
 
+# musl 
+*.lo
+*.so
+*.so.1
+musl/config.mak
+musl/lib/musl-gcc.specs
+musl/obj/

@@ -8,7 +8,7 @@ The problem is we cant wait in C for js since we are in the main thread, one obl
 What I came up with to tackle the problem is using async.h so we can have resumable c functions.
 This might not work for big projects since you would have to keep track of all states and also manage the execution flow.
 
-Note: async.h uses stackless coroutines
+Note: `async.h` uses stackless coroutines
 
 ---
 JS environment
@@ -53,8 +53,8 @@ async example(fetch_state_t *state) {
 
 What|Description
 --------|-----------
-`main.c` | this uses async.h for this will fetch [hello.txt](hello.txt) and return its length
-`main.js` | this file provides object storage, initialization of the wasm and the main event loop
+`main.c` | this uses async.h for async functions to fetch [hello.txt](hello.txt) and return its length
+`main.js` | this file provides object handling, initialization of the wasm and the main event loop
 
 ## Example
 

@@ -21,6 +21,7 @@ What|Description
 --------|-----------
 [Simple call async JS from C](/async_call_from_c/README.md) | using async `JS` functions from `C`
 [Simple multithreading](/multithreading/README.md) | starting a `C` function from `C` in a other thread
+[Simple libc](/musl_basic/README.md) | using libc from to use `C` standard functions
 
 ## QA
 

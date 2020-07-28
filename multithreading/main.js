@@ -25,7 +25,7 @@ const startThread = (module, memory, thread_entry_ptr) => {
         memory,
         module
     };
-    log(`env::startThread starting thread on cfunction(${thread_entry_ptr})`)
+    log(`env::startThread starting thread on function(index=${thread_entry_ptr})`)
     thread.postMessage(thread_info);
     return 1;
 }
@@ -34,7 +34,7 @@ const main = async () => {
     const module = await downloadWasm("out.wasm");
     const memory = new WebAssembly.Memory({ initial: 2, shared: true, maximum: 2 });
     const table = new WebAssembly.Table({ initial: 2, element: 'anyfunc' });
-
+   
     const env = {
         memoryBase: 0,
         tableBase: 0,
@@ -43,11 +43,11 @@ const main = async () => {
         startThread: (entry) => startThread(module, memory, entry)
     };
 
-    const { exports: { init, read}} = await WebAssembly.instantiate(module, { env });
+    const { exports: { init, read } } = await WebAssembly.instantiate(module, { env });
 
     init();
-    
-    while(true){
+
+    while (true) {
         log(`read() -> ${read()}`, "read_value")
         await sleep_ms(1);
     }

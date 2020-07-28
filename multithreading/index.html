@@ -20,15 +20,16 @@
             }
         </style>
     </header>
-
     <body>
         <h1>Start a thread that does some heavy calculations</h1>
-        <p></p>
+        <p>
+            We starting a Worker(worker.js) and tell him to execute the function<br>
+            This currently works only on Chrome since FireFox does not support posting of SharedArray buffers.
+        </p>
         <ul id="console"></ul>
         <script type="module" src="main.js" async></script>
     </body>
     <footer>
         <a href=https://github.com/K0IN/wasm_stuff>Find me on Github</a>
     </footer>
-
 </html>
