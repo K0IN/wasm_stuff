@@ -10,10 +10,10 @@ function log(txt, liId = null) {
 
 const downloadWasm = async (path) => {
     log(`downloading wasm file: '${path}'`);
-    const wasm_binary = await fetch(path);
-    const bin_buffer = await wasm_binary.arrayBuffer();
-    const wasm_module = await WebAssembly.compile(bin_buffer);
-    return wasm_module;
+    const wasmFetch = await fetch(path);
+    const wasmBinary = await wasmFetch.arrayBuffer();
+    const wasmModule = await WebAssembly.compile(wasmBinary);
+    return wasmModule;
 }
 
 const stringFromPtr = (memory, ptr) => {

@@ -1,3 +1,5 @@
+import { initEnv } from "./out.js"
+
 function log(txt, liId = null) {
     const consoleHandle = document.querySelector('#console');
     const existingLine = document.getElementById(liId);
@@ -16,42 +18,26 @@ const downloadWasm = async (path) => {
     return wasmModule;
 }
 
-const sleep_ms = (ms) => new Promise((r, e) => setTimeout(r, ms));
-
-const startThread = (module, memory, thread_entry_ptr) => {
-    const thread = new Worker("worker.js");
-    const thread_info = {
-        thread_entry_ptr,
-        memory,
-        module
-    };
-    log(`env::startThread starting thread on function(index=${thread_entry_ptr})`)
-    thread.postMessage(thread_info);
-    return 1;
-}
-
 const main = async () => {
     const module = await downloadWasm("out.wasm");
-    const memory = new WebAssembly.Memory({ initial: 2, shared: true, maximum: 2 });
+    const memory = new WebAssembly.Memory({ initial: 2, maximum: 2 });
     const table = new WebAssembly.Table({ initial: 2, element: 'anyfunc' });
-   
+
     const env = {
         memoryBase: 0,
         tableBase: 0,
         __indirect_function_table: table,
         memory,
-        startThread: (entry) => startThread(module, memory, entry)
     };
+    const externalEnv = initEnv(memory, table, { log }); // we can also share functions, vars with the wrapper that can be accessed through extern[name]
 
-    const { exports: { init, read } } = await WebAssembly.instantiate(module, { env });
+    log(`Loaded glue code functions: ${Object.keys(externalEnv).join(", ")}`);
+
+    Object.assign(env, externalEnv);
+
+    const { exports: { init } } = await WebAssembly.instantiate(module, { env });
 
     init();
-
-    while (true) {
-        log(`read() -> ${read()}`, "read_value")
-        await sleep_ms(1);
-    }
-
 }
 
 

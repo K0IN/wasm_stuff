@@ -32,7 +32,7 @@ startThread(worker_thread_function);
 What|Description
 --------|-----------
 main.c | this starts the thread 
-main.js | this file provides the tread creation api, initialization of the wasm and the read loop for the gui
+main.js | this file provides the thread creation api, initialization of the wasm and the read loop for the gui
 
 ## Example
 

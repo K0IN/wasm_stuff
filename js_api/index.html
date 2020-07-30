@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Using javascript from C</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+        <style>
+            html {
+                font-family: 'Roboto Mono', monospace;
+            }
+
+            ul#console {
+                list-style-type: none;
+                font-size: 14px;
+                line-height: 25px;
+                padding-left: 5px;
+            }
+
+            ul#console li {
+                border-bottom: solid 1px #80808038;
+            }
+        </style>
+    </header>
+    <body>
+        <h1>Using javascript from C (easy way)</h1>
+        <p>
+            This code example shows how to inline js functions in c.<br>
+            You can find our custom js compiler on github.<br>
+            It will handle string resolving, object resolving for you.        
+        </p>      
+        <pre><code class="language-C" id=src>JSIMPORT({
+    extern.log(string);
+}, int, console_log, char* string)</code></pre> 
+        <p>
+            Will be compiled to:         
+        </p>
+        <pre><code class="language-C" id=src>env.console_log = (string_tmp) => {
+    const tmpFn = (string) => {
+        extern.log(string);
+    };
+    string_tmp = readString(string_tmp);
+    return tmpFn(string_tmp);
+};</code></pre> 
+        <ul id="console"></ul>
+        <script type="module" src="main.js" async></script>
+    </body>
+    <footer>
+        <a href=https://github.com/K0IN/wasm_stuff>Find me on Github</a>
+    </footer>
+</html>

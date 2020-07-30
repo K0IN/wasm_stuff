@@ -2,18 +2,10 @@
 
 ## What is this?
 
-This is a collection of some WebAssembly experiments I did, 
-its meant to teach others, not to do high level code.
+This is a collection of some WebAssembly experiments I did.
+It's meant to teach others, not to do high level code.
 
-## Requirements
-
-> Make
-
-> Clang 9 or above
-
-> A Webserver [you can find a webserver here (py3)](server4.py)
-
-> npm
+Every experiment has a working example hosted on github pages, see description(Readme) of the experiment.
 
 ## What we got
 
@@ -22,6 +14,7 @@ What|Description
 [Simple call async JS from C](/async_call_from_c/README.md) | using async `JS` functions from `C`
 [Simple multithreading](/multithreading/README.md) | starting a `C` function from `C` in a other thread
 [Simple libc](/musl_basic/README.md) | using libc from to use `C` standard functions
+[Simple js api](/js_api/README.md) | using a custom `JS` compiler to auto generate your glue code
 
 ## QA
 
