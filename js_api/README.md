@@ -25,9 +25,9 @@ env.console_log = (string_tmp) => {
 ```
 At the current time we only **resolve**
 
-Parameters: `char*`, `const char*`, `const char*`, `jshandle_t`(our type to indicate its a object handle), `functionhandle_t`(our type to indicate its a function handle)
+Parameters: `char*`, `const char*`, `jshandle_t`(our type to indicate its a object handle), `functionhandle_t`(our type to indicate its a function handle)
 
-Return: `functionhandle_t`
+Return: `jshandle_t`
 
 Of cause you can return all basic types without the need of the resolver like: `int`, `float`/ `double` ... but be careful `JS` does not care about signs(`unsigned int` for example)!
 

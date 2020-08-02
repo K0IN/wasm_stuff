@@ -11,10 +11,11 @@ Every experiment has a working example hosted on github pages, see description(R
 
 What|Description
 --------|-----------
-[Simple call async JS from C](/async_call_from_c/README.md) | using async `JS` functions from `C`
+[Simple call async JS from C [C lib]](/async_call_from_c/README.md) | using async `JS` functions from `C`
 [Simple multithreading](/multithreading/README.md) | starting a `C` function from `C` in a other thread
 [Simple libc](/musl_basic/README.md) | using libc from to use `C` standard functions
 [Simple js api](/js_api/README.md) | using a custom `JS` compiler to auto generate your glue code
+[Using asyncify to call async JS from C](/asyncify/README.md) | Asyncify to call async `JS` functions from `C`
 
 ## QA
 

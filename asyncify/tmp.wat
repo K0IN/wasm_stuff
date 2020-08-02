@@ -1,0 +1,15 @@
+(module
+  (type $t0 (func (param i32) (result i32)))
+  (type $t1 (func (result i32)))
+  (import "env" "fetch" (func $fetch (type $t0)))
+  (func $runtime (type $t1) (result i32)
+    i32.const 1024
+    call $fetch)
+  (table $T0 1 1 funcref)
+  (memory $memory 2)
+  (global $g0 (mut i32) (i32.const 66576))
+  (global $__data_end i32 (i32.const 1034))
+  (export "memory" (memory 0))
+  (export "runtime" (func $runtime))
+  (export "__data_end" (global 1))
+  (data $d0 (i32.const 1024) "hello.txt\00"))
