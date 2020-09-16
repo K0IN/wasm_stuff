@@ -81,7 +81,7 @@ const main = async () => {
         if (response_length > 0) {
             log(`wasm::runtime returned ${response_length}`);
             document.getElementById("got").value = response_length;
-            break; // exit the async "event loop" 
+            break; // exit the async "event loop"
         }
         await sleep_ms(100);
     }
