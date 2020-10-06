@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Call async Javascript from C</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <style>
+            html {
+                font-family: 'Roboto Mono', monospace;
+            }
+
+            ul#console {
+                list-style-type: none;
+                font-size: 14px;
+                line-height: 25px;
+                padding-left: 5px;
+            }
+
+            ul#console li {
+                border-bottom: solid 1px #80808038;
+            }
+        </style>
+    </header>
+    <body>
+        <h1>Calling static(CPP) constructors</h1>
+        <p>
+            WASM code has no runtime.<br>
+            So it cant just call constructors(since they run befor the main function).<br>
+            WASM/CPP has a function(that can be exported via link flag: --export __wasm_call_ctors)<br>
+            called __wasm_call_ctors, this will init global variables and call constructors. 
+        </p>
+        <ul id="console"></ul>
+        <script type="module" src="main.js" async></script>
+    </body>
+    <footer>
+        <a href=https://github.com/K0IN/wasm_stuff/tree/master/constructors>Find me on Github</a>
+    </footer>
+</html>
