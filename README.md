@@ -17,6 +17,7 @@ What|Description
 [Simple js api](/js_api/README.md) | using a custom `JS` compiler to auto generate your glue code
 [Using asyncify to call async JS from C](/asyncify/README.md) | Asyncify to call async `JS` functions from `C`
 [Using Chrome to debug WASM](/debugging/README.md) | Using `DWARF` to debug `WASM`
+[Using CPP constructors](/constructors/README.md) | Using constructors and give `CPP` runtime to init global data
 
 ## QA
 
