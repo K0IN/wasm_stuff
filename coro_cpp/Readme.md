@@ -50,7 +50,7 @@ extern "C" __attribute__((visibility("default"))) int runtime()
 What|Description
 --------|-----------
 `main.cpp` | exports eventloop `runtime` and performs the fetch 
-`main.js` | provides imports
+`main.js` | provides imports 
 `coroutine` | Implementation of the coro `coroutine_handle` and `coroutine_traits` [source](https://github.com/emsr/cxx_coroutines)
 
 ## Example
