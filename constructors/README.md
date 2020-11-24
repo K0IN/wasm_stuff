@@ -1,4 +1,4 @@
-# Call async Javascript from C
+# Call C Constructors on startup
 
 ## Introduction 
 

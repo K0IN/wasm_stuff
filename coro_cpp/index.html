@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Call async Javascript from C</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">        
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+        <style>
+            html {
+                font-family: 'Roboto Mono', monospace;
+            }
+
+            ul#console {
+                list-style-type: none;
+                font-size: 14px;
+                line-height: 25px;
+                padding-left: 5px;
+            }
+
+            ul#console li {
+                border-bottom: solid 1px #80808038;
+            }
+        </style>
+    </header>
+    <body>
+        <h1>Using C++ coroutines to call async js</h1>
+        <p>
+            This Example uses the browser fetch api from C++<br>
+            Javascript calls the runtime as a sort of event loop
+        </p>
+        <pre><code class="language-C" id=src>resumable foo(int x)
+{
+    while (true)
+    {
+        int f = do_fetch(x);
+        if (f)
+        {
+            co_return f;
+        }
+        co_await std::experimental::coroutines::suspend_always();
+    }
+}</code></pre>
+        <ul id="console"></ul>
+        <script type="module" src="main.js" async></script>
+    </body>
+</html>
