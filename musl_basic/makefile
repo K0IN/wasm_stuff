@@ -1,6 +1,3 @@
-CXX = clang-10
-LNK = wasm-ld-10
-
 CXXFLAGS = -Oz -c -Wall --target=wasm32 --sysroot=./musl/
 LNKFLAGS = --no-entry --allow-undefined --export-dynamic
 

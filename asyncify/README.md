@@ -44,6 +44,8 @@ int runtime()
 
 > A Webserver [you can find a webserver here (py3)](../server4.py)
 
+> Make sure that the env variable is set: export WASMOPT=wasm-opt
+
 ## Files
 
 What|Description

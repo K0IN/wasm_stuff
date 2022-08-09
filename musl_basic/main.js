@@ -32,20 +32,20 @@ const main = async () => {
     const module = await downloadWasm("out.wasm");
     // none of this will be called by our example
     const env = {
-        __syscall4: ()=>{throw Exception("NYI")},
-        __syscall3: ()=>{throw Exception("NYI")},
-        __extenddftf2: ()=>{throw Exception("NYI")},
-        __trunctfsf2: ()=>{throw Exception("NYI")},
-        __trunctfdf2: ()=>{throw Exception("NYI")},
-        __netf2: ()=>{throw Exception("NYI")},
-        __multf3: ()=>{throw Exception("NYI")},
-        __floatsitf: ()=>{throw Exception("NYI")},
-        __subtf3: ()=>{throw Exception("NYI")},
-        __addtf3: ()=>{throw Exception("NYI")},
-        __fixtfsi: ()=>{throw Exception("NYI")},
-        __fixunstfsi: ()=>{throw Exception("NYI")},
-        __floatunsitf: ()=>{throw Exception("NYI")},
-        __divtf3: ()=>{throw Exception("NYI")},
+        __syscall4: () => { throw Exception("NYI") },
+        __syscall3: () => { throw Exception("NYI") },
+        __extenddftf2: () => { throw Exception("NYI") },
+        __trunctfsf2: () => { throw Exception("NYI") },
+        __trunctfdf2: () => { throw Exception("NYI") },
+        __netf2: () => { throw Exception("NYI") },
+        __multf3: () => { throw Exception("NYI") },
+        __floatsitf: () => { throw Exception("NYI") },
+        __subtf3: () => { throw Exception("NYI") },
+        __addtf3: () => { throw Exception("NYI") },
+        __fixtfsi: () => { throw Exception("NYI") },
+        __fixunstfsi: () => { throw Exception("NYI") },
+        __floatunsitf: () => { throw Exception("NYI") },
+        __divtf3: () => { throw Exception("NYI") },
     };
 
     const { exports: { init, memory } } = await WebAssembly.instantiate(module, { env });

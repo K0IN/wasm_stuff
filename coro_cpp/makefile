@@ -1,6 +1,3 @@
-CXX = clang++-10
-LNK = wasm-ld-10
-
 CXXFLAGS = -Wall -c --target=wasm32 --std=c++2a -fcoroutines-ts -fno-threadsafe-statics --sysroot .
 LNKFLAGS = --no-entry --allow-undefined --export-dynamic 
 

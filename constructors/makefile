@@ -1,6 +1,3 @@
-CXX = clang++-10
-LNK = wasm-ld-10
-
 CXXFLAGS = -Wall -c --target=wasm32 
 LNKFLAGS = --no-entry --allow-undefined --export-dynamic --export __wasm_call_ctors
 

@@ -1,4 +1,4 @@
-CXXFLAGS = -Oz -Wall -c --target=wasm32
+CCFLAGS = -Wall -c --target=wasm32 
 LNKFLAGS = --no-entry --allow-undefined --export-dynamic
 
 build: main.o
@@ -10,4 +10,4 @@ clean:
 	rm -f *.o
 
 main.o: main.c
-	$(CXX) $(CXXFLAGS) main.c
+	$(CC) $(CCFLAGS) main.c

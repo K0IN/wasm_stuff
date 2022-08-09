@@ -1,6 +1,3 @@
-CXX = clang-10
-LNK = wasm-ld-10
-
 CXXFLAGS = -Oz -Wall -c --target=wasm32
 LNKFLAGS = --no-entry --allow-undefined --export-dynamic --import-table --import-memory --shared-memory --max-memory=131072 --features=atomics,bulk-memory
 
